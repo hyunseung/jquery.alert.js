@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery alert Plugin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.alert.min.js"></script>
+    <link href="jquery.alert.css" rel="stylesheet">
+    <style>
+        html{font-size: 10px;}
+        body{font-size: 1.5rem;}
+        #wrap {margin-left: 10rem;margin-top:4rem;}
+        header .info{padding:3rem 0;}
+        header p{line-height: 2rem;}
+        h1{font-size: 4rem;font-weight: 700;color:#ffba00;}
+        h2{font-size: 3rem;font-weight: 700;color:#232323;margin-bottom: 1rem;}
+        h3{font-size: 2.5rem;font-weight: 700;color:#232323;margin: 2rem 0;}
+        section {margin:4rem 0;}
+        section article {width: auto;max-width:800px;padding:2rem;margin:2rem;}
+        section article .ex{background-color:#4d4d4d;color:#fff;line-height:2rem;border: 8px double #fff;width: auto;max-width:800px;padding:2rem;margin:2rem 0;}
+        button{background-color: #ffba00;color:#fff;border:0;width: 150px; height: 50px;font-size: 2rem;border-radius: 15px;cursor: pointer;}
+        table{width:100%}
+        th,td{border:2px solid #c8c8c8;padding:1rem;}
+        th{background-color: #4d4d4d;color:#fff;}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <h1>jQuery alert Plugin</h1>
+        <article class="info">
+            <p>이 플러그인은 브라우저 시스템 알림창을 조금 더 아릅답게 화면에 표시하고 다양한 브라우져에서 동일하게 표시 하기 위한 플러그인입니다.</p>
+            <p>기본 jQuery가 설치되어있어야 하며 3가지(Alert,Confirm,Prompt)의 기능을 제공합니다 </p>
+        </article>
+    </header>
+    <main>
+        <section>
+            <h2>Alert</h2>
+            <article>
+                <p>
+                    $.alert('내용',{옵션})
+                </p>
+                <h3>Option</h3>
+                <table>
+                    <tr>
+                        <th>옵션명</th>
+                        <th>설명</th>
+                        <th>값</th>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>알림창의 타이틀 변경</td>
+                        <td>html</td>
+                    </tr>
+                    <tr>
+                        <td>em</td>
+                        <td>강조 문구</td>
+                        <td>html</td>
+                    </tr>
+                    <tr>
+                        <td>callEvent</td>
+                        <td>확인 후 이벤트</td>
+                        <td>Function</td>
+                    </tr>
+                    <tr>
+                        <td>btnName.confirm</td>
+                        <td>확인 버튼 텍스트 변경</td>
+                        <td>String</td>
+                    </tr>
+                </table>
+                <h3>Example</h3>
+                <p class="ex">
+                    $.alert('안녕하세요! 빌리블입니다&lt;br&gt;info@billible.co.kr로 궁금한 점은 문의하세요',{em:'Billible',title:'인사'})
+                </p>
+
+            </article>
+            <button class="alert-btn">Example</button>
+        </section>
+
+        <section>
+            <h2>Confirm</h2>
+            <article>
+                <p>
+                    $.confirm('내용',{옵션})
+                </p>
+                <h3>Option</h3>
+                <table>
+                    <tr>
+                        <th>옵션명</th>
+                        <th>설명</th>
+                        <th>값</th>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>알림창의 타이틀 변경</td>
+                        <td>html</td>
+                    </tr>
+                    <tr>
+                        <td>em</td>
+                        <td>강조 문구</td>
+                        <td>html</td>
+                    </tr>
+                    <tr>
+                        <td>callEvent</td>
+                        <td>확인 후 이벤트</td>
+                        <td>Function</td>
+                    </tr>
+                    <tr>
+                        <td>cancelEvent</td>
+                        <td>취소 후 이벤트</td>
+                        <td>Function</td>
+                    </tr>
+                    <tr>
+                        <td>confirmButton</td>
+                        <td>확인 버튼 텍스트 변경</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>cancelButton</td>
+                        <td>취소 버튼 텍스트 변경</td>
+                        <td>String</td>
+                    </tr>
+                </table>
+                <h3>Example</h3>
+                <p class="ex">
+                    $.confirm('안녕하세요! 빌리블입니다&lt;br&gt;info@billible.co.kr로 문의하시겠습니까?',{<Br>
+                    &emsp;em:'Billible',<Br>
+                    &emsp;title:'안내',<Br>
+                    &emsp;callEvent:function(){$.alert('감사합니다.')},<Br>
+                    &emsp;cancelEvent:function(){$.alert('예 궁금한건 언제든지 문의 주세요');},<Br>
+                    &emsp;cancelButton:'다음에'<Br>
+                    })
+                </p>
+
+            </article>
+            <button class="confirm-btn">Example</button>
+        </section>
+
+        <section>
+            <h2>Prompt</h2>
+            <article>
+                <p>
+                    $.prompt('내용',{옵션})
+                </p>
+                <h3>Option</h3>
+                <table>
+                    <tr>
+                        <th>옵션명</th>
+                        <th>설명</th>
+                        <th>값</th>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>알림창의 타이틀 변경</td>
+                        <td>html</td>
+                    </tr>
+                    <tr>
+                        <td>em</td>
+                        <td>강조 문구</td>
+                        <td>html</td>
+                    </tr>
+                    <tr>
+                        <td>callEvent</td>
+                        <td>확인 후 이벤트</td>
+                        <td>Function(val) val : 입력값</td>
+                    </tr>
+
+                    <tr>
+                        <td>cancelEvent</td>
+                        <td>취소 후 이벤트</td>
+                        <td>Function</td>
+                    </tr>
+                    <tr>
+                        <td>btnName.confirm</td>
+                        <td>확인 버튼 텍스트 변경</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>btnName.cancel</td>
+                        <td>취소 버튼 텍스트 변경</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>input</td>
+                        <td>input 타입 변경 버튼 텍스트 변경</td>
+                        <td> text(기본),tel,numberpassword</td>
+                    </tr>
+                </table>
+                <h3>Example</h3>
+                <p class="ex">
+                    $.prompt('1234를 입력해주세요',{<Br>
+                    &emsp;title:'인증',<Br>
+                    &emsp;callEvent:function(val){<Br>
+                    &emsp;&emsp;if(val==1234){<Br>
+                    &emsp;&emsp;&emsp;$.alert('비밀번호가 맞습니다');<Br>
+                    &emsp;&emsp;} else {<Br>
+                    &emsp;&emsp;&emsp;$.alert('비밀번호를 정확히 입력해주세요');}<br>
+                    &emsp;&emsp;},<Br>
+                    &emsp;input:'password',<Br>
+                    &emsp;confirmButton:'인증하기'<Br>
+                    &emsp;})
+                </p>
+
+            </article>
+            <button class="prompt-btn">Example</button>
+        </section>
+
+        <section>
+            <h2>체인 연결</h2>
+            <article>
+                <p>
+                    jQuery 체인 이벤트 후 실행
+                </p>
+                <h3>Example</h3>
+                <p class="ex">
+                    $("#item-box").stop().animate({"margin-left":"500px"},1000)<Br>
+                    .animate({"margin-left":"0"},300)<br>
+                    .delay(300).alert('1번 더!!',<Br>
+                    {<Br>
+                    &emsp;&emsp;callEvent:function(){<Br>
+                    &emsp;&emsp;&emsp;$("#item-box").stop().animate(<Br>
+                    &emsp;&emsp;&emsp;&emsp;{"margin-left":"500px"},1000<Br>
+                    &emsp;&emsp;&emsp;).animate(<Br>
+                    &emsp;&emsp;&emsp;&emsp;{"margin-left":"0"},300<Br>
+                    &emsp;&emsp;&emsp; )<Br>
+                    &emsp;&emsp;}<Br>
+                    });
+                </p>
+
+            </article>
+            <div id='item-box' style="width: 100px;height: 50px;display: flex;justify-content: center;align-items: center;background-color: cadetblue;margin:4rem 0;">Item</div>
+            <button class="colorChange-btn" data-target="#item-box">색 변경</button>
+        </section>
+
+    </main>
+</div>
+<script>
+    $(function(){
+        $('.alert-btn').click(function(){
+            $.alert('안녕하세요! 빌리블입니다<br>info@billible.co.kr로 궁금한 점은 문의하세요',{em:'Billible',title:'인사'})
+        })
+
+        $('.confirm-btn').click(function(){
+            $.confirm('안녕하세요! 빌리블입니다<br>info@billible.co.kr로 문의하시겠습니까?',{em:'Billible',title:'안내',callEvent:function(){$.alert('감사합니다.')},cancelEvent:function(){$.alert('예 궁금한건 언제든지 문의 주세요');},cancelButton:'다음에'})
+        })
+
+        $('.prompt-btn').click(function(){
+            $.prompt('1234를 입력해주세요',{title:'인증',callEvent:function(val){if(val==1234) $.alert('비밀번호가 맞습니다'); else $.alert('비밀번호를 정확히 입력해주세요');},input:'password',confirmButton:'인증하기'})
+        })
+
+        $('.colorChange-btn').click(function() {
+            $("#item-box").stop().animate(
+                {"margin-left":"500px"},1000
+            ).animate(
+                {"margin-left":"0"},300
+            ).delay(300).alert('1번 더!!',
+            {
+                callEvent:function(){
+                    $("#item-box").stop().animate(
+                        {"margin-left":"500px"},1000
+                    ).animate(
+                        {"margin-left":"0"},300
+                    )
+                }
+            });
+        })
+
+
+    })
+
+</script>
+</body>
+</html>

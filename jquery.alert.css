@@ -1,0 +1,41 @@
+/* **************************** popup area start ***************************** */
+
+/*reset*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video
+{margin:0;padding: 0;border: 0;font: inherit;vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul, li, ol, menu {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+a{text-decoration: none}
+button:focus,input:focus {outline:none;}
+
+
+/* body에 class .popup_open를 붙이면 활성화됨. */
+.popup{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 999999; display: none; }
+body.popup_open .popup{ display: block; }
+.popup .popup-wrap{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: auto; height: auto; border-radius: 10px; background-color: #fff; border-radius: 10px; z-index: 2;max-width: 90%;}
+.popup .popup-title{ width: 100%; padding: 15px 20px; background-color: #ffba00; border-radius: 10px 10px 0 0; color: #fff; font-size: 25px; letter-spacing: -0.05em; font-weight: 600; box-sizing: border-box; }
+.popup .popup-content{ width: 100%; height: auto; padding: 50px 40px; box-sizing: border-box; min-width: 300px;}
+
+.popup .popup-wrap .popup-content .text-box p{ font-size: 20px; letter-spacing: -0.05em; line-height: 30px; font-weight: 400; margin-bottom: 30px; word-break: keep-all; text-align: center;}
+.popup .popup-wrap .popup-content .text-box strong{ display: block; color: #ffba00; font-size: 20px; font-weight: 600; margin-bottom: 40px; }
+.popup .popup-wrap .popup-content .popup-btn ul{ display: flex; justify-content: center; }
+.popup .popup-wrap .popup-content .popup-btn ul li{ width: 170px; height: auto;  margin-right: 20px; box-sizing: border-box; }
+.popup .popup-wrap .popup-content .popup-btn ul li:last-child{margin-right: 0;}
+.popup .popup-wrap .popup-content .popup-btn ul li a{ display: block; width: 100%; height: 100%; padding: 2rem 0; text-align: center; font-size: 2rem; letter-spacing: -0.05em; font-weight: 600; box-sizing: border-box; border-radius: 5px; background-color: #ffba00; color: #fff;}
+
+/* 인풋박스 스타일 */
+.popup .popup-wrap .popup-content .input-box{width: 100%; height: auto; margin-bottom: 30px;}
+.popup .popup-wrap .popup-content input{ width: 100%; height: 6rem; border: 1px solid #c8c8c8; border-radius: 5px; box-sizing: border-box; font-size: 2rem; color: #4d4d4d;padding-left: 1rem;}
+
+
+/* *********** 뒷배경 검정색 딤 처리 박스 *********** */
+body.popup_open .dimmed{width: 100%; height: 100%; position: fixed; left: 0; top: 0; background: rgba(0,0,0,0.8); overflow: hidden; z-index: 1;}
+/* body 태그에 연결할 클래스 */
+body.popup_open{overflow: hidden}
+
+
