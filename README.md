@@ -1,1 +1,1 @@
-# jquery.alert.js
+# jQuery.alert.js
