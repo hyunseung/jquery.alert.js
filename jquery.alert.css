@@ -24,8 +24,13 @@ body.popup_open .popup{ display: block; }
 .popup .popup-wrap .popup-content .text-box p{ font-size: 20px; letter-spacing: -0.05em; line-height: 30px; font-weight: 400; margin-bottom: 30px; word-break: keep-all; text-align: center;}
 .popup .popup-wrap .popup-content .text-box strong{ display: block; color: #ffba00; font-size: 20px; font-weight: 600; margin-bottom: 40px; }
 .popup .popup-wrap .popup-content .popup-btn ul{ display: flex; justify-content: center; }
+
 .popup .popup-wrap .popup-content .popup-btn ul li{ width: 170px; height: auto;  margin-right: 20px; box-sizing: border-box; }
 .popup .popup-wrap .popup-content .popup-btn ul li:last-child{margin-right: 0;}
+/*버튼 역순 정렬*/
+.popup .popup-wrap .popup-content .popup-btn ul.button-reverse li{margin-right: 0;order: 2}
+.popup .popup-wrap .popup-content .popup-btn ul.button-reverse li:last-child{margin-right: 20px;order: 1}
+
 .popup .popup-wrap .popup-content .popup-btn ul li a{ display: block; width: 100%; height: 100%; padding: 2rem 0; text-align: center; font-size: 2rem; letter-spacing: -0.05em; font-weight: 600; box-sizing: border-box; border-radius: 5px; background-color: #ffba00; color: #fff;}
 
 /* 인풋박스 스타일 */

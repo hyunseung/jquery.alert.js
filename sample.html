@@ -8,7 +8,7 @@
     <title>jQuery alert Plugin</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jquery.alert.min.js"></script>
-    <link href="jquery.alert.css" rel="stylesheet">
+    <link href="jquery.alert.min.css" rel="stylesheet">
     <style>
         html{font-size: 10px;}
         body{font-size: 1.5rem;}
@@ -104,6 +104,11 @@
                         <td>html</td>
                     </tr>
                     <tr>
+                        <td>buttonReverse</td>
+                        <td>버튼 위치 반대로</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
                         <td>callEvent</td>
                         <td>확인 후 이벤트</td>
                         <td>Function</td>
@@ -161,6 +166,11 @@
                         <td>em</td>
                         <td>강조 문구</td>
                         <td>html</td>
+                    </tr>
+                    <tr>
+                        <td>buttonReverse</td>
+                        <td>버튼 위치 반대로</td>
+                        <td>boolean</td>
                     </tr>
                     <tr>
                         <td>callEvent</td>
@@ -244,11 +254,11 @@
         })
 
         $('.confirm-btn').click(function(){
-            $.confirm('안녕하세요! 빌리블입니다<br>info@billible.co.kr로 문의하시겠습니까?',{em:'Billible',title:'안내',callEvent:function(){$.alert('감사합니다.')},cancelEvent:function(){$.alert('예 궁금한건 언제든지 문의 주세요');},cancelButton:'다음에'})
+            $.confirm('안녕하세요! 빌리블입니다<br>info@billible.co.kr로 문의하시겠습니까?',{em:'Billible',title:'안내',buttonReverse:true,callEvent:function(){$.alert('감사합니다.')},cancelEvent:function(){$.alert('예 궁금한건 언제든지 문의 주세요');},cancelButton:'다음에'})
         })
 
         $('.prompt-btn').click(function(){
-            $.prompt('1234를 입력해주세요',{title:'인증',callEvent:function(val){if(val==1234) $.alert('비밀번호가 맞습니다'); else $.alert('비밀번호를 정확히 입력해주세요');},input:'password',confirmButton:'인증하기'})
+            $.prompt('1234를 입력해주세요',{title:'인증',buttonReverse:false,callEvent:function(val){if(val==1234) $.alert('비밀번호가 맞습니다'); else $.alert('비밀번호를 정확히 입력해주세요');},input:'password',confirmButton:'인증하기'})
         })
 
         $('.colorChange-btn').click(function() {

@@ -1,12 +1,12 @@
 /*
 * custom alert jQuery Plugin
-* author Yoon  (yhs6119@billible.co.kr) [http://billible.co.kr]
+* author Yoon  (info@billible.co.kr) [http://billible.co.kr]
 *
-* version 1.0.1 [JUL. 2020]
+* version 1.0.2 [JUL. 2022]
 *
 * @changelog
 * v 1.0.1      ->   2020.07 플러그인 완성
-*
+* v 1.0.2      ->   버튼 위치 변경 옵션 추가
 */
 
 (function($) {
@@ -27,6 +27,7 @@
         op : {
             title:'알림',
             em:'',
+            buttonReverse:false,
             callEvent:null,
             cancelEvent:null,
             confirmButton:'확인',
@@ -55,10 +56,10 @@
     ,button = {
         alert:function(op){return $('<ul>')
                 .append($('<li>').append($('<a href="#" class="confirm">'+op.confirmButton+'</a>')))},
-        confirm:function(op){return $('<ul>')
+        confirm:function(op){return $("<ul "+(op.buttonReverse?"class='button-reverse'":"")+">")
                 .append($('<li>').append($('<a href="#" class="close">'+op.cancelButton+'</a>')))
                 .append($('<li>').append($('<a href="#" class="confirm">'+op.confirmButton+'</a>')))},
-        prompt:function(op){return $('<ul>')
+        prompt:function(op){return $("<ul "+(op.buttonReverse?"class='button-reverse'":"")+">")
                 .append($('<li>').append($('<a href="#" class="close">'+op.cancelButton+'</a>')))
                 .append($('<li>').append($('<a href="#" class="confirm">'+op.confirmButton+'</a>')))},
     },event = {
